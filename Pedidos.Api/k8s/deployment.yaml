@@ -1,0 +1,19 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-recarga
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-recarga
+  template:
+    metadata:
+      labels:
+        app: api-recarga
+    spec:
+      containers:
+      - name: api-recarga
+        image: emmanuel84/recargas:1.0
+        ports:
+        - containerPort: 80
